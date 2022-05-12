@@ -48,7 +48,7 @@ class Body extends StatelessWidget {
             height: 20,
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 50, right: 50),
+            padding: const EdgeInsets.symmetric(horizontal: 50),
             child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: const [
@@ -71,24 +71,75 @@ class Body extends StatelessWidget {
           ),
           Container(
             height: size.height * 0.5,
+            width: size.width,
             decoration: const BoxDecoration(
                 color: Color.fromARGB(221, 11, 10, 10),
                 borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(50),
                     topRight: Radius.circular(50))),
-            child: Center(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  SizedBox(
-                    height: 20,
+            child: Stack(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 35),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const SizedBox(
+                        height: 30,
+                      ),
+                      const Text(
+                        "Skill",
+                        style: nTextStyle,
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: const [
+                          MyButton(
+                            name: "flutter",
+                          ),
+                          MyButton(
+                            name: "dart",
+                          ),
+                          MyButton(
+                            name: "cpp",
+                          ),
+                          MyButton(
+                            name: "java",
+                          ),
+                          MyButton(
+                            name: "python",
+                          ),
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 40,
+                      ),
+                      const Text(
+                        "Profession",
+                        style: nTextStyle,
+                      ),
+                      const SizedBox(
+                        height: 15,
+                      ),
+                      const Text(
+                        "3rd Year B.Tech Student",
+                        style: TextStyle(
+                            letterSpacing: 1.1,
+                            fontSize: 25,
+                            color: Colors.white),
+                      ),
+                      const Divider(
+                        color: Colors.grey,
+                        thickness: 1.2,
+                      )
+                    ],
                   ),
-                  Text("Skill", style: TextStyle(
-                    
-                  ),)
-                ],
-              ),
+                ),
+              ],
             ),
           )
         ],

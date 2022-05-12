@@ -26,7 +26,9 @@ class MyButton extends StatelessWidget {
           ]),
       child: Center(
         child: SvgPicture.asset(
+          
           'assets/icons/${name}.svg',
+          
           fit: BoxFit.contain,
           // height: 40,
           // width: 40,
